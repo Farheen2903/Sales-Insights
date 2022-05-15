@@ -1,47 +1,14 @@
-# Sales-Insights
-Sales Insights Data Analysis Project
-Instructions to setup mysql on your local computer
-Follow step in this video to install mysql on your local computer https://www.youtube.com/watch?v=WuBcTJnIuzo
+# Sales Insights Data Analysis Project
 
-SQL database dump is in db_dump.sql file above. Download db_dump.sql file to your local computer and import it as per instructions given in the tutorial video
+# Sales Report from 2017 to 2019
+![image](https://user-images.githubusercontent.com/99427855/168463585-ea2d0994-c735-4366-bd49-9c9ffec9971f.png)
+# Sales Report for 2017
+![image](https://user-images.githubusercontent.com/99427855/168463692-f7884b79-d0e3-4a46-96bf-66b181f9ce9d.png)
+# Sales Report for 2018
+![image](https://user-images.githubusercontent.com/99427855/168463706-b778af77-b6f5-4071-bf46-391a26d7677b.png)
+# Sales Report for 2019
+![image](https://user-images.githubusercontent.com/99427855/168463733-1698b599-c65a-4017-83d9-cabed9c3cad9.png)
+# Sales Report for 2020
+![image](https://user-images.githubusercontent.com/99427855/168463750-da8afb31-1dc5-4d10-9606-2b591e9e64fd.png)
 
-Data Analysis Using SQL
-Show all customer records
-
-SELECT * FROM customers;
-
-Show total number of customers
-
-SELECT count(*) FROM customers;
-
-Show transactions for Chennai market (market code for chennai is Mark001
-
-SELECT * FROM transactions where market_code='Mark001';
-
-Show distrinct product codes that were sold in chennai
-
-SELECT distinct product_code FROM transactions where market_code='Mark001';
-
-Show transactions where currency is US dollars
-
-SELECT * from transactions where currency="USD"
-
-Show transactions in 2020 join by date table
-
-SELECT transactions.*, date.* FROM transactions INNER JOIN date ON transactions.order_date=date.date where date.year=2020;
-
-Show total revenue in year 2020,
-
-SELECT SUM(transactions.sales_amount) FROM transactions INNER JOIN date ON transactions.order_date=date.date where date.year=2020 and transactions.currency="INR\r" or transactions.currency="USD\r";
-
-Show total revenue in year 2020, January Month,
-
-SELECT SUM(transactions.sales_amount) FROM transactions INNER JOIN date ON transactions.order_date=date.date where date.year=2020 and and date.month_name="January" and (transactions.currency="INR\r" or transactions.currency="USD\r");
-
-Show total revenue in year 2020 in Chennai
-
-SELECT SUM(transactions.sales_amount) FROM transactions INNER JOIN date ON transactions.order_date=date.date where date.year=2020 and transactions.market_code="Mark001";
-
-Data Analysis Using Power BI
-Formula to create norm_amount column
-= Table.AddColumn(#"Filtered Rows", "norm_amount", each if [currency] = "USD" or [currency] ="USD#(cr)" then [sales_amount]*75 else [sales_amount], type any)
+Conclusion: The sales is declining. 
